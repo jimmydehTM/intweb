@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="Thomas More" />
+    <title>Anoroc Services</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    body {
+      margin-top: 4rem;
+    }
+
+    .navbar {
+      background-image: linear-gradient(
+        141deg,
+        #2d2d2d 0%,
+        #9fb8ad 51%,
+        #82e0c2 75%
+      );
+    }
+  </style>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Anoroc Services</a>
+    </nav>
+
+    <main role="main" class="container">
+      <h1>Registreer</h1>
+      <p class="lead">
+        Meld je aan bij Anoroc Services, wij beschermen jou software tegen
+        malware!
+      </p>
+
+      <div class="row">
+        <div class="col-md-8">
+          <form>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="voornaam">Voornaam</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="voornaam"
+                  placeholder="Uw voornaam"
+                  autofocus
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="naam">Naam</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="naam"
+                  placeholder="Uw naam"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="gebruikersnaam">Gebruikersnaam</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gebruikersnaam"
+                  placeholder="divoc91"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">E-mailadres</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="password">Wachtwoord</label>
+              <input type="password" class="form-control" id="password" />
+              <small class="form-text text-muted"
+                >Je wachtwoord moet minstens 8 tekens lang zijn</small
+              >
+            </div>
+
+            <div class="mb-3">
+              <label for="password_repeat">Herhaal wachtwoord</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password_repeat"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="adres">Adres</label>
+              <input
+                type="text"
+                class="form-control"
+                id="adres"
+                placeholder="Markt 1"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="land">Land</label>
+                <select class="custom-select d-block w-100" id="land">
+                  <option value="">Kies een land</option>
+                  <option>België</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="provincie">Provincie</label>
+                <select class="custom-select d-block w-100" id="provincie">
+                  <option value="">Kies een provincie</option>
+                  <option>Antwerpen</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="postcode">Postcode</label>
+                <input type="number" class="form-control" id="postcode" />
+              </div>
+            </div>
+            <hr class="mb-4" />
+
+            <div class="row">
+              <div class="col-md-7">
+                <h4 class="mb-3">Hou me op de hoogte</h4>
+                <div class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="nieuwsbrief"
+                  />
+                  <label class="custom-control-label" for="nieuwsbrief"
+                    >Inschrijven voor onze nieuwsbrief</label
+                  >
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="voorwaarden"
+                  />
+                  <label class="custom-control-label" for="voorwaarden"
+                    >Ik ga akkoord met de algemene voorwaarden.</label
+                  >
+                </div>
+              </div>
+              <div class="col-md-5">
+                <h4 class="mb-3">Betaling</h4>
+
+                <div class="d-block my-3">
+                  <div class="custom-control custom-radio">
+                    <input
+                      id="app"
+                      value="Banking App"
+                      name="paymentMethod"
+                      type="radio"
+                      class="custom-control-input"
+                      checked
+                    />
+                    <label class="custom-control-label" for="app"
+                      >Banking app</label
+                    >
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input
+                      id="overschrijving"
+                      value="Overschrijving"
+                      name="paymentMethod"
+                      type="radio"
+                      class="custom-control-input"
+                    />
+                    <label class="custom-control-label" for="overschrijving"
+                      >Overschrijving</label
+                    >
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input
+                      id="visa"
+                      value="VISA"
+                      name="paymentMethod"
+                      type="radio"
+                      class="custom-control-input"
+                    />
+                    <label class="custom-control-label" for="visa"
+                      >Visa card</label
+                    >
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input
+                      id="paypal"
+                      value="PayPal"
+                      name="paymentMethod"
+                      type="radio"
+                      class="custom-control-input"
+                    />
+                    <label class="custom-control-label" for="paypal"
+                      >PayPal</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4" />
+            <button
+              class="btn btn-primary btn-lg btn-block mb-2"
+              onclick="validateForm()"
+              type="button"
+            >
+              Wave your magic wand
+            </button>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <div class="alert alert-danger" role="alert" id="error-list"></div>
+          <div class="alert alert-success" role="alert" id="success">
+            <h4 class="alert-heading">Goed gedaan!</h4>
+            <p>Aww yeah, je werd geregistreerd.</p>
+          </div>
+          <div class="alert alert-info" role="alert" id="betalingswijze">
+            <h4 class="alert-heading">Betalingswijze</h4>
+            <p id="betalingswijze-msg"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let errors = [];
+      document.getElementById("success").style.display = "none";
+      document.getElementById("error-list").style.display = "none";
+      document.getElementById("betalingswijze").style.display = "none";
+
+      function validateForm() {
+        errors = [];
+        //voornaam
+        checkEmptyField("voornaam", "Het veld voornaam is vereist.");
+        //naam
+        checkEmptyField("naam", "Het veld naam is vereist.");
+        //gebruikersnaam
+        checkEmptyField(
+          "gebruikersnaam",
+          "Het veld gebruikersnaam is vereist."
+        );
+        //email
+        if (document.getElementById("email").value == "") {
+          errors.push("Het veld email is vereist.");
+        } else if (!validateEmail(document.getElementById("email").value)) {
+          errors.push("E-mailadres is niet correct.");
+        }
+        //wachtwoord
+        if (document.getElementById("password").value == "") {
+          errors.push("Het veld wachtwoord is vereist.");
+        } else if (document.getElementById("password").value.length < 7) {
+          errors.push("Het wachtwoord moet langer zijn dan 7 tekens.");
+        }
+        if (document.getElementById("password_repeat").value == "") {
+          errors.push("Het veld herhaal wachtwoord is vereist.");
+        } else if (
+          document.getElementById("password").value !=
+          document.getElementById("password_repeat").value
+        ) {
+          errors.push("Je wachtwoorden komen niet overeen.");
+        }
+        //adres
+        checkEmptyField("adres", "Adres is vereist.");
+        //land
+        checkEmptyField("land", "Land is vereist.");
+        //provincie
+        checkEmptyField("provincie", "Provincie is vereist.");
+        //postcode
+        // checkEmptyField('postcode', 'Het veld postcode is vereist.');
+        checkPC("postcode");
+
+        //algemene voorwaarden
+        if (document.getElementById("voorwaarden").checked == false) {
+          errors.push("Je moet de algemene voorwaarden accepteren.");
+        }
+        //betaling
+        validatePayment();
+
+        //show errors
+        if (errors.length > 0) {
+          document.getElementById("error-list").innerHTML =
+            "<h4 class='alert-heading'>Yikes, errors..</h4>";
+          errors.forEach(addErrorToList);
+          document.getElementById("error-list").style.display = "block";
+          document.getElementById("success").style.display = "none";
+          document.getElementById("betalingswijze").style.display = "none";
+        } else {
+          document.getElementById("error-list").style.display = "none";
+          document.getElementById("success").style.display = "block";
+          document.getElementById("betalingswijze").style.display = "block";
+        }
+      }
+
+      function checkEmptyField(name, message) {
+        if (document.getElementById(name).value == "") errors.push(message);
+      }
+
+      function checkPC(name) {
+        let x = document.getElementById(name).value;
+        if (isNaN(parseInt(x))) {
+          errors.push("Postcode is vereist.");
+        } else {
+          if (x < 1000 || x > 9999) {
+            errors.push(
+              "De waarde van postcode moet tussen 1000 en 9999 liggen."
+            );
+          }
+        }
+      }
+
+      function addErrorToList(item, index) {
+        document.getElementById("error-list").innerHTML += item + "<br/>";
+      }
+
+      function validatePayment(option) {
+        let radios = document.getElementsByName("paymentMethod");
+        for (let i = 0, length = radios.length; i < length; i++) {
+          if (radios[i].checked) {
+            document.getElementById("betalingswijze-msg").innerHTML =
+              "Je betalingswijze is " + radios[i].value + ".";
+            break;
+          }
+        }
+      }
+
+      function validateEmail(email) {
+        let re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+    </script>
+  </body>
+</html>

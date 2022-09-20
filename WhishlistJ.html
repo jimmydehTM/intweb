@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <title>Wishlist oefening</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand">Wishlist</span>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <div class="row col-12">
+            <div id="products" class="col-8">
+                <!-- hiertussen FIXME-->
+
+                <!-- // hiertussen FIXME-->
+            </div>
+            <div class="col-4">
+                <ul id="wishlist" class="list-group">
+                    <li class="list-group-item active">Wish List</li>
+                    <li id="total" class="list-group-item">Empty ...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="addToWishlist('part1')">
+      Add to list
+    </button>
+    <script>
+    
+        let totaal = 0;
+
+        const products = [{
+            title: 'ASUS GeForce RTX 3060 Ti',
+            info: {
+                price: 699,
+            },
+            categories: ['GPU', 'ASUS', 'parts'],
+            image: 'img/gpu.jpg',
+        }, {
+            title: 'Intel Core i7-12700KF',
+            info: {
+                price: 409,
+                cores: 12,
+            },
+            categories: ['CPU', 'Intel', 'parts'],
+            image: 'img/cpu.jpg',
+        }, {
+            title: 'Corsair H100i',
+            info: {
+                price: 129,
+                type: 'Liquid cooling',
+            },
+            categories: ['Cooling', 'Corsair', 'parts'],
+            image: 'img/fan.jpg',
+        }, {
+            title: 'Gigabyte Aorus 1TB',
+            info: {
+                price: 169,
+                type: 'M.2',
+            },
+            categories: ['Storage', 'SSD', 'Gigabyte', 'parts'],
+            image: 'img/ssd.jpg',
+        }, {
+            title: 'ASUS Prime H610M-K D4',
+            info: {
+                price: 109,
+                socket: '1700',
+                chipset: 'Intel H610',
+            },
+            categories: ['Motherboard', 'ASUS', 'parts'],
+            image: 'img/mobo.jpg',
+        }, {
+            title: 'Corsair RM650X',
+            info: {
+                price: 105,
+            },
+            categories: ['PSU', 'Corsair', 'parts'],
+            image: 'img/psu.jpg',
+        }, {
+            title: 'Corsair Vengeance RGB 2x16GB',
+            info: {
+                price: 150,
+                type: 'DDR4',
+                speed: '3200MHz',
+            },
+            categories: ['RAM', 'Corsair', 'parts'],
+            image: 'img/ram.jpg',
+        }, ];
+        // vanaf hier FIXME
+        window.addEventListener('DOMContentLoaded', event => {
+            // console.log('DOM fully loaded and parsed');
+            let htmlToLoad = '';
+
+            for (let index = 0; index < products.length; index++) {
+                let productX = products[index];
+                console.log(productX);
+
+                if (index % 2 == 0) {
+                    htmlToLoad += `<div class="row row-cols-2">`;
+                }
+                
+                htmlToLoad += `<div class="card" style="width: 18rem;">`;
+                htmlToLoad += `<img class="card-img-top" src="${productX.image}" alt="${productX.image}">`;
+                htmlToLoad += `<div class="card-body">`;
+                htmlToLoad += `<h5 class="card-title">${productX.title}</h5>`;
+                htmlToLoad += `<h6 class="card-subtitle mb-2 text-muted">${productX.categories[0]} - ${productX.categories[1]} - ${productX.categories[2]}</h6>`;
+                htmlToLoad += `<p class="card-text">price $${productX.info.price} </p>`;
+                htmlToLoad += `<button type="button" class="btn btn-primary" id="${index}" onclick="addToWishlist('${index}')">Add to list</button>`;
+                htmlToLoad += `</div></div>`;
+
+                if (index % 2 != 0) {
+                    htmlToLoad += `</div>`;
+                }
+            }
+
+            document.getElementById('products').innerHTML = htmlToLoad;
+        });
+
+        function addToWishlist(partX) {
+            //alert(partX);
+            let ul = document.getElementById('wishlist');
+            let existingProducts = document.querySelectorAll('li');
+
+            let li = document.createElement('li');
+
+            li.textContent =
+                products[partX].title + ' : ' + products[partX].info.price + '$';
+            // vanaf hier FIXME
+            let del = document.createElement('input');
+            del.className = 'btn btn-warning';
+            del.type = 'button';
+            del.value = 'Remove Item';
+            del.onclick = function() {
+                this.parentNode.remove();
+            };
+            li.appendChild(del);
+            // regel hieronder bepaalt met of zonder kaderke
+
+            li.classList.add('list-group-item');
+
+            ul.appendChild(li);
+            totaal += products[partX].info.price;
+            document.getElementById('total').textContent = `Total: ${totaal}$`;
+        }
+
+        // tot hier FIXME
+    </script>
+</body>
+
+</html>

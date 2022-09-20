@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For....in</title>
+
+
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+
+    <div id="divResult"></div>
+
+
+    <script type="text/javascript">
+        const el = document.querySelector("#divResult");
+        let res = '';
+
+        let persoon = {
+            voornaam: "Thomas",
+            achternaam: "More",
+            woonplaats: "Geel"
+        };
+
+        // for in gebruiken om door eigenschappen te lopen...       
+        for (eigenschap in persoon) {
+            res += eigenschap + "<br />";
+        }
+
+        el.innerHTML = res;
+    </script>
+
+
+</body>
+
+</html>

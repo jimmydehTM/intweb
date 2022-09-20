@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>Wishlist oefening</title>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <span class="navbar-brand">Wishlist</span>
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <div class="row col-12">
+      <div id='card-container' class="col-8">
+        
+      </div>
+      <div class="col-4">
+        <ul id='wishlist' class="list-group">
+          <li class="list-group-item active">Wish List</li>
+          <li id='total' class="list-group-item">Empty ...</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    const products = [
+      {
+        title: 'ASUS GeForce RTX 3060 Ti',
+        info: {
+          price: 699
+        },
+        categories: ['GPU', 'ASUS', 'parts'],
+        image: 'img/gpu.jpg'
+      },
+      {
+        title: 'Intel Core i7-12700KF',
+        info: {
+          price: 409,
+          cores: 12
+        },
+        categories: ['CPU', 'Intel', 'parts'],
+        image: 'img/cpu.jpg'
+      },
+      {
+        title: 'Corsair H100i',
+        info: {
+          price: 129,
+          type: 'Liquid cooling'
+        },
+        categories: ['Cooling', 'Corsair', 'parts'],
+        image: 'img/fan.jpg'
+      },
+      {
+        title: 'Gigabyte Aorus 1TB',
+        info: {
+          price: 169,
+          type: 'M.2'
+        },
+        categories: ['Storage', 'SSD', 'Gigabyte', 'parts'],
+        image: 'img/ssd.jpg'
+      },
+      {
+        title: 'ASUS Prime H610M-K D4',
+        info: {
+          price: 109,
+          socket: '1700',
+          chipset: 'Intel H610'
+        },
+        categories: ['Motherboard', 'ASUS', 'parts'],
+        image: 'img/mobo.jpg'
+      },
+      {
+        title: 'Corsair RM650X',
+        info: {
+          price: 105
+        },
+        categories: ['PSU', 'Corsair', 'parts'],
+        image: 'img/psu.jpg'
+      },
+      {
+        title: 'Corsair Vengeance RGB 2x16GB',
+        info: {
+          price: 150,
+          type: 'DDR4',
+          speed: '3200MHz'
+        },
+        categories: ['RAM', 'Corsair', 'parts'],
+        image: 'img/ram.jpg'
+      }];
+
+      
+      
+      
+
+let cardContainer;
+let cardSorting = document.createElement('div');
+cardSorting.className = 'row';
+cardContainer1 = document.getElementById('card-container');
+cardContainer1.appendChild(cardSorting);
+
+let createCard = (items) => {
+
+    
+
+    let card = document.createElement('div');
+    card.className = "card";
+    card.style = "width: 25rem;";
+
+    let cardHeader = document.createElement('div');
+    cardHeader.className = "card-header text-center";
+
+    let cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+
+    let prodImage = document.createElement('img');
+    prodImage.className = 'card-img-top';
+    prodImage.src = items.image;
+    
+    let title = document.createElement('h5');
+    title.innerText = items.title;
+    title.className = 'card-title';
+    
+    
+
+    let price = document.createElement('div');
+    price.innerText = `$${items.info.price}`;
+    price.className = 'card-price';
+    price.style = 'font-size: 1.5rem;';
+    
+    let info = document.createElement('p');
+    let info2 = document.createElement('p');
+    let info3 = document.createElement('p');
+    let info4 = document.createElement('p');
+    let info5 = document.createElement('p');
+    
+    
+
+    
+    /* checkForInfo(items.info.type);
+    checkForInfo(items.info.speed);
+    checkForInfo(items.info.cores);
+    checkForInfo(items.info.socket);
+    checkForInfo(items.info.chipset); */
+
+    let button = document.createElement('a');
+    button.className = 'btn btn-primary';
+    
+    button.id = `${items.title}`;
+    button.innerText = 'Add to wishlist';
+
+    cardBody.appendChild(cardHeader)
+    cardHeader.appendChild(title);
+    cardBody.appendChild(prodImage);
+    cardBody.appendChild(info);
+    cardBody.appendChild(info2);
+    cardBody.appendChild(info3);
+    cardBody.appendChild(info4);
+    cardBody.appendChild(info5);
+    if(items.info.cores){info.innerText += `Cores: ${items.info.cores}`
+    } else{info.innerText += `test`
+            info.className = 'visually-hidden'}
+    if(items.info.socket){info2.innerText += `Socket: ${items.info.socket}`
+    } else{info.innerText += `test`
+            info.className = 'visually-hidden'}
+    if(items.info.chipset){info3.innerText += `Chipset: ${items.info.chipset}`
+    } else{info.innerText += `test`
+            info.className = 'visually-hidden'}
+    if(items.info.type){info4.innerText = `Type: ${items.info.type}`
+    } else{info.innerText += `test`
+            info.className = 'visually-hidden'}
+    if(items.info.speed){info5.innerText += `Speed: ${items.info.speed}`
+    } else{info.innerText += `test`
+            info.className = 'visually-hidden'}
+    
+
+
+    cardBody.appendChild(price);
+    cardBody.appendChild(button);
+    card.appendChild(cardBody);
+    cardSorting.appendChild(card);
+
+
+  function checkForInfo(information){
+    if(information){
+      return info.innerText += `${information} `;
+    }//else {info.innerText = ``}
+  }
+}
+
+  
+
+  
+
+let initListOfProducts = () => {
+    if (cardContainer) {
+        document.getElementById('card-container').replaceWith(cardContainer);
+        return;
+    }
+
+    cardContainer = document.getElementById('card-container');
+    products.forEach((i) => {
+        createCard(i);
+    });
+
+    
+};
+
+initListOfProducts()
+
+document.querySelectorAll(".btn").forEach(item => {
+  item.addEventListener('click', function(e){
+    e.preventDefault();
+
+    //Declare variables
+    let wishlist = document.querySelector('#wishlist');
+    let total = document.querySelector('#total');
+    let listItem = document.createElement('li')
+    
+    listItem.className = 'list-group-item';
+    
+    //count the current items. Give "Empty" if no items.
+    total.innerText = `Total: ${wishlist.childElementCount - 1}`;
+    listItem.onclick = function() {
+      this.remove(listItem);
+      total.innerText = `Total: ${wishlist.childElementCount - 2}`
+      if(wishlist.childElementCount < 3){total.innerText = "Empty..."}
+    }
+    
+    //Add the items to the list
+    listItem.innerText = `${e.target.id}`;
+    wishlist.appendChild(listItem);
+    
+    
+})})
+
+      
+  </script>
+</body>
+</html>

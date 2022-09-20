@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts</title>
+</head>
+<body>
+    <h1>Fun Facts!!</h1>
+    <script>
+
+
+        let funFacts = () => {
+            let nu = new Date()
+
+            let datumconversie = new Date(localStorage.getItem("gbdate"))
+
+            let datumgeboorte = new Intl.DateTimeFormat('nl-NL', 
+            {weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' }).format(datumconversie)
+
+            let huidigedatum = new Intl.DateTimeFormat('nl-NL', 
+            {weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }).format(nu)
+
+            
+            let hoelangleven = new Intl.DateTimeFormat('nl-NL', 
+            {weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', fractionalSecondDigits: 1 }).format(nu)
+
+            let verschil = Math.trunc((nu.getTime() - datumconversie.getTime()) / (1000 * 3600 * 24))
+            
+            //let c = console.log(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'long' }).format(a));
+            //localStorage.removeItem('gbdate')
+            document.write(`Je bent geboren op ${datumgeboorte}. </br>`)
+            document.write(`Vandaag is het ${huidigedatum}. </br>`)
+            document.write(`Je loopt al ${verschil} dagen op deze wereldbol rond. </br>`)
+            //document.write(`Je zal vermoedelijk sterven op ${a} </br>`)
+            
+        }
+        funFacts()
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objecten: object function constructor</title>
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <h1>Object functie aanroep gebruik this</h1>
+    <script>
+        // Object definiëren
+        function Persoon(voornaam, achternaam, woonplaats) {
+            this.voornaam = voornaam;
+            this.achternaam = achternaam;
+            this.woonplaats = woonplaats;
+            this.toonGegevens = toonGegevens;
+        }
+
+        function toonGegevens() {
+            console.log("voornaam: " + this.voornaam + "\nachternaam: " + this.achternaam);
+        }
+
+        // Object maken
+        let vriend_1 = new Persoon("Thomas", "More", "Geel");
+
+        vriend_1.toonGegevens();
+
+        // Toon het object
+        console.log(vriend_1);
+    </script>
+
+</body>
+
+</html>

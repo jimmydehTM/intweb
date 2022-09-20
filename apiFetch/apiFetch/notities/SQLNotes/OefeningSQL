@@ -1,0 +1,54 @@
+DROP TABLE IF exists Project.Afdeling;
+DROP TABLE IF exists Project.Project;
+DROP TABLE IF exists Project.ProjectMedewerker;
+DROP TABLE IF exists Project.Medewerker;
+
+DROP SCHEMA IF exists Project;
+GO
+
+CREATE SCHEMA Project;
+GO
+
+
+
+CREATE TABLE Project.Afdeling (
+	id int IDENTITY(1,1) NOT NULL,
+	naam varchar(45) NOT NULL,
+	CONSTRAINT PK_Afdeling PRIMARY KEY (id)
+	);
+
+CREATE TABLE Project.Project (
+	id int IDENTITY(1,1) NOT NULL,
+	naam varchar(45) NOT NULL,
+	afdelingId int	NOT NULL,
+	CONSTRAINT PK_Project PRIMARY KEY (id),
+	CONSTRAINT FK_Project_Afdeling
+	FOREIGN KEY (afdelingId)
+	REFERENCES Project.Afdeling(id)
+	
+);
+CREATE TABLE Project.ProjectMedewerker (
+	id int IDENTITY(1,1) NOT NULL,
+	projectId int NOT NULL,
+	medewerkerId int NOT NULL,
+	taak varchar(45) NULL,
+	urenGewerkt int	NOT NULL,
+	CONSTRAINT PK_ProjectMedewerker PRIMARY KEY (id),
+	CONSTRAINT FK_ProjectMedewerker_Medewerker
+	FOREIGN KEY (medewerkerId)
+	REFERENCES Project.ProjectMedewerker(id) ON DELETE CASCADE,
+	CONSTRAINT FK_ProjectMedewerker_Project
+	FOREIGN KEY (projectId)
+	REFERENCES Project.Project(id) ON DELETE CASCADE
+	
+);
+
+CREATE TABLE Project.Medewerker (
+	id int NOT NULL,
+	voornaam varchar(45) NOT NULL,
+	achternaam varchar(45) NOT NULL,
+	CONSTRAINT PK_Medewerker PRIMARY KEY (id)
+	
+);
+
+

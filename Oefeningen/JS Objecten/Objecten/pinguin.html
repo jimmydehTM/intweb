@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//constructor function
+function pinguin(name, origin, canFly) {
+    this.name = name;
+    this.origin = origin;
+    this.canFly = canFly;
+    this.sayHello = sayHello
+    }
+
+    //print method
+    function sayHello(naam) {
+        switch (naam) {
+            
+            case gunter: console.log(`${naam.name} => “Hoi! Ik ben ${naam.name} en ik zeg KWAK”`)
+            break;
+            case ramon: console.log(`${naam.name} => “Ik ben blij je te ontmoeten.”`)
+            break;
+            case vreemdePenguin: console.log(`vreemdePinguin => “Hola, Ik ben een pinguin zonder naam. Mijn naam is ${vreemdePenguin.name}”`)
+            break;
+            case vierdepinguin: console.log(`${naam.name} => Hallo daar!`)
+            break;
+                default:
+                break;
+        }
+
+    }
+    //creation of objects
+    let gunter = new pinguin("Gunter", "Adventure Time", false)
+    let ramon = new pinguin("Ramon", "Happy Feet", true)
+    let vierdepinguin = new pinguin('Fred', 'Sitting Ducks', true)
+    // let vreemdePenguin = {
+    //     character: "pinguïn McPenguin",
+    //     origin: "Donald Duck",
+    //     canfly: true };
+    
+
+    // sayHello(gunter)
+    // sayHello(ramon)
+    // sayHello(vreemdePenguin)
+
+
+
+
+     
+
+    //a Creëer een nieuwe variabele pinguïns met een lijst (array) met de objecten
+    let pinguins = [gunter, ramon, vierdepinguin]
+    
+    //b Vraag het eerste object in de array op en print alle properties en methods van dit object.
+    console.log('//B')
+    console.log(pinguins[0])
+
+    //c  Creëer een nieuwe variabel nogEenPinguin en stel deze gelijk aan de tweede pinguïn in de array.
+    console.log('//C')
+     let nogEenPinguin = pinguins[1]
+    console.log(nogEenPinguin)
+
+    //d Print de naam van de laatste. Zorg dat de code nog werkt indien er meer of minder objecten in de array zitten.
+    console.log('//D')
+     console.log(pinguins[pinguins.length-1].name)
+
+    //e We hebben één vreemde pinguïn. Voeg deze toe aan het einde van onze array!
+    console.log('//E')
+     pinguins.push(vreemdePenguin = {
+        character: "pinguïn McPenguin",
+        origin: "Donald Duck",
+        canfly: true }
+        )
+     
+
+    //f Toon de lengte van onze array. 
+    console.log('//F')
+     console.log(pinguins.length)
+
+    //g Zet voor de eerste pinguïn de property canFly op true en druk deze af.
+    console.log('//G')
+     gunter.canFly = true
+     console.log(gunter.canFly)
+
+    //h Roep de sayHello methode op voor de eerste pinguïn in de array!
+    console.log('//H')
+     console.log(`${pinguins[0].name} => Hallo daar!`)
+
+    //i Schrijf een lus om iedere pinguïn op te vragen en print de namen naar de console.
+    console.log('//I')
+     pinguins.forEach(x => console.log(x.name))
+     
+
+    //j. Schrijf een lus om voor iedere pinguïn de methode sayHello te laten uitvoeren. 
+    console.log('//J')
+    for(index = 0; index < pinguins.length; index++){sayHello(pinguins[index])}
+
+    //k. Schrijf een lus om voor iedere pinguïn een nieuwe property toe te voegen: namelijk numberOfFeet en geef deze voor allemaal de waarde 2. Geef alle objecten weer in de console. 
+    console.log('//K')
+    pinguins.forEach(element => {pinguins[element.numberOfFeet = 2]})  
+    console.log(pinguins)
+    
+    
+    //l. Schrijf een lus en druk voor iedere pinguïn die kan vliegen (canFly = true) een melding naar de console af met de <naam van de pinguïn> + " kan vliegen!" We geven niets weer indien hij niet kan vliegen! 
+    console.log('//L')
+    pinguins.forEach(element => {if (element.canFly) console.log(`${element.name} kan vliegen!`)})
+    console.log(pinguins)
+    </script>
+</body>
+</html>

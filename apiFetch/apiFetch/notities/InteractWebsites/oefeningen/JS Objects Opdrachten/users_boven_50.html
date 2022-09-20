@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Maak een array arrUsers met 7 objecten in. Dit object heeft 1 property user. Deze bevat de namen van de users. (Zelf ingeven!) 
+        function object(user){this.user = user}
+        
+        let arrUsers = [
+                        new object('Jeff'), 
+                        new object('Anja'), 
+                        new object('Roos'), 
+                        new object('Didier'), 
+                        new object('Louis'), 
+                        new object('Emma'), 
+                        new object('Marnix')
+                                                ]
+
+
+
+
+        //Via de map methode geven we ieder object in de array een nieuwe property punten en vullen deze automatisch op met een random waarde van 0 tot 100.  
+        arrUsers.map(x => x.punten = Math.floor(Math.random()*100))
+        console.log(arrUsers)
+
+        //Via de methode filter halen we er alle objecten eruit waar de punten groter zijn dan 50. Bewaar deze in de array arrSelected en toon deze in de console. 
+        let arrSelected = arrUsers.filter(x => x.punten > 50)
+        console.log(arrSelected)
+
+
+        //Via de methode reduce bereken je de som van alle punten die in de arrSelected zitten.                 
+        const total = arrSelected.reduce((map, {punten}) => map + punten, 0)
+        
+        
+        //Toon het gemiddelde d.m.v. een zin in de console.  
+        console.log(total/arrSelected.length)
+
+        
+        
+        
+    </script>
+</body>
+</html>

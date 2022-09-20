@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <ul id="t"></ul>
+    <script>
+
+
+       let fetchAPi = async = () => {
+            fetch('https://fakestoreapi.com/products/categories')
+            .then(res => res.json())
+            .then(data =>{
+                
+                getData(data)
+                    
+                
+            })
+        }
+
+        
+        
+        getData = (h) => {
+
+        const addButton = Object.assign(
+            document.createElement('button'),
+                
+            {
+                
+                id: 'no',
+                pupUp: 'manual',
+                style: '--index:1;',
+                innerHTML: 'add me to the list'
+                
+                
+            }
+        )
+
+        const listItem = Object.assign(
+            document.createElement('li'),
+            {
+                id: 'li',
+                innerHTML: `<br>` + `${h[0]}`,
+                style: 'list-style:none',
+                
+            }
+        )
+        
+
+      
+        
+        //append element to the document body
+        document.getElementById('t').innerHTML = addButton.outerHTML
+        
+        //select the button element by idName
+        let button = document.getElementById('no')
+
+        //function to loop over elements and append to document
+        insertBitch = () => {
+        h.forEach((element, index) => {
+                
+                document.getElementById('t').outerHTML +=  listItem.outerHTML
+                    
+               });
+            }
+
+            //eventListener to add listItem
+            button.addEventListener('click', function(e){
+             e.preventDefault()
+             insertBitch()
+             
+                
+            })
+        
+        }
+        
+
+
+        fetchAPi()
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Opdrachten les 6: built-in objecten</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body >
+	<div class="container">
+
+		<h3>Opdracht geboortedatum FunFacts</h3>
+
+		<div class="row">
+			<div class="col-md-4">
+
+				<form name="frmLeeftijd">
+					<div class="row ">
+						<div class="col-auto mb-3">
+							<label for="geboortedatum">Je geboortedatum</label>
+							<input type="date" id="geboortedatum" min="1900-01-01">
+						</div>
+					</div>
+					<div class="row ">
+						<div class="col-auto mb-3">
+							<button class="btn btn-primary btn-lg  mb-2" type="button">Check Fun Facts</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		 maxDatum = () => document.getElementById('geboortedatum').setAttribute('max', '2022-04-25')
+		 storeAndGo = () => {
+			let a = document.getElementById('geboortedatum').value
+			localStorage.setItem('gbdate', a)
+			location = 'opdracht_funfacts_xxx.html'}
+			
+		maxDatum()
+		
+		document.querySelector('.btn').addEventListener('click', storeAndGo)
+		
+
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+</body>
+
+</html>

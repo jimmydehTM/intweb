@@ -1,0 +1,19 @@
+[{
+    "name": "Campus Geel",
+    "city": "Geel",
+    "pc": 2440,
+    "parking": true,
+    "edu": ["Internet of Things", "Programmeren", "Elektromechanische-systemen", "Systeem- en Netwerkbeheer"]
+}, {
+    "name": "Campus Lier",
+    "city": "Lier",
+    "pc": 2500,
+    "parking": false,
+    "edu": ["Verpleegkunde", "Orthopedagogische Begeleiding", "Programmeren", "Systeem- en Netwerkbeheer"]
+}, {
+    "name": "Campus Turnhout",
+    "city": "Turnhout",
+    "pc": 2300,
+    "parking": true,
+    "edu": ["Accounting Administration", "Verpleegkunde", "Maatschappelijk Werk", "Programmeren"]
+}]

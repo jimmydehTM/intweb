@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objecten: object literal</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <h1>Objecten</h1>
+    <div id="divResult"></div>
+    <script>
+        // Voorbeelden van een leeg object.
+        let leegObject = {};
+        console.log(leegObject);
+
+        // Voorbeelden van object met 3 properties.
+        let persoon = {
+            voornaam: "Thomas",
+            achternaam: "More",
+            woonplaats: "Geel"
+        };
+
+        // Schrijf eigenschap van een object naar het scherm
+        document.querySelector("#divResult").innerHTML = "Voornaam: " + persoon.voornaam +
+            "<br />" + "Achternaam: " + persoon.achternaam;
+
+        console.log(persoon);
+    </script>
+
+</body>
+
+</html>

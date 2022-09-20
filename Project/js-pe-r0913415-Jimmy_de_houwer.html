@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  
+  
+  
+    <h1 class=" row justify-content-center">Registreer</h1>
+    <p id='title' class=" row justify-content-center">Meld je aan bij Anoroc Services, wij beschermen jouw software tegen malware!</p>
+  
+  
+    <div class=" row justify-content-center"> 
+    
+    
+      <form class="col-8" onsubmit="return false">
+
+        <div class="row justify-content-center">
+        <div class="col-md-4">
+          <label for="Voornaam" class="form-label">Voornaam</label>
+            <input type="text" class="form-control" id="inputVoornaam">
+        </div>
+        <div class="col-md-4">
+          <label for="Naam" class="form-label">Naam</label>
+            <input type="text" class="form-control" id="inputNaam">
+            
+        </div>
+          </div>
+      
+      <div class="col-md4 alerts">
+        <div class="alert alert-danger visually-hidden" role="alert">
+          <h4 id="alerttitle">Yikes, errors...</h4>
+          <p id="alert-comment"></p>
+          </div>
+          <div class="alert alert-success visually-hidden" role="alert">
+            <h4 id="alerttitle">Goed gedaan!</h4>
+            <p id="alert-comment">Aww yeah, je werd geregistreerd!!</p>
+          </div>
+        
+        <div class="alert alert-info visually-hidden" role="alert">
+          <h4 id="alerttitle">betalingswijze</h4>
+          <p id="alert-comment"></p>
+        </div>
+      </div>
+     
+
+      
+      
+
+          
+        
+         
+      
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+              <label class="form-label">Gebruikersnaam</label>
+              <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input type="text" class="form-control" id="gebruikersnaam" placeholder="Gebruikersnaam">
+              </div>
+            </div>
+        
+        <div class="col-md-4">
+          <label for="inputEmail" class="form-label">E-mailadres</label>
+          <input type="email" class="form-control" id="inputEmail">
+        </div>
+      </div>
+    
+    
+
+
+    
+      <div class="row justify-content-center">
+      <div class="col-md-4">
+          <label for="inputPassword" class="form-label">Wachtwoord</label>
+          <input type="password" class="form-control" id="inputpassword">
+          Je wachtwoord moet minstens 8 tekens lang zijn
+        </div>
+
+        <div class="col-md-4">
+          <label for="inputPasswordCheck" class="form-label">Herhaal Wachtwoord</label>
+          <input type="password" class="form-control" id="inputCheck">
+        </div>
+      </div>
+    
+    
+      <div class="row justify-content-center">
+        
+        <div class="col-md-8">
+          <label for="inputAddress2" class="form-label">Adres</label>
+          <input type="text" class="form-control" id="inputadres" placeholder="Uw adres en huisnummer">
+        </div>
+      </div>
+    
+
+
+
+    
+      <div class="row justify-content-center">
+
+        <div class="col-md-3">
+          <label for="inputLand" class="form-label">Land</label>
+          <select id="inputLand" class="form-select">
+            <option value="Kies een land">Kies een land</option>
+            <option value="Belgium">Belgium</option>
+        </select></div>
+
+        <div class="col-md-3">
+          <label for="inputProvincie" class="form-label">Provincie</label>
+          <select id="inputProvincie" class="form-select">
+            <option value="Kies een provincie">Kies een provincie</option>
+            <option value="Antwerpen">Antwerpen</option>
+            <option value="Henegouwen">Henegouwen</option>
+            <option value="Limburg">Limburg</option>
+            <option value="Luik">Luik</option>
+            <option value="Luxemburg">Luxemburg</option>
+            <option value="Namen">Namen</option>
+            <option value="Luxemburg">Luxemburg</option>
+            <option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
+            <option value="West-Vlaanderen">West-Vlaanderen</option>
+            <option value="Vlaams-Brabant">Vlaams-Brabant</option>
+            <option value="Waals-Brabant">Waals-Brabant</option>
+          </select></div>
+
+
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">Postcode</label>
+          <input type="number" class="form-control" id="inputPostcode">
+        </div>
+          </div>
+            
+          <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-4">
+            <h4>Hou me op de hoogte</h4>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="nieuwsbriefCheck">
+            <label class="form-check-label" for="gridCheck">
+              Inschrijven voor deze nieuwsbrief
+            </label>
+          </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="voorwaardenCheck">
+            <label class="form-check-label" for="gridCheck">
+              Ik ga akkoord met de algemene voorwaarden
+            </label>
+          </div></div>
+        
+
+        <div id="radio" class="col-4">
+          <h4>Betaling</h4>
+          <input type="radio" id="app" name="Betaling" value="Bank App">
+          <label for="app">Banking App</label><br>
+          <input type="radio" id="overschrijving" name="Betaling" value="Overschrijving">
+          <label for="overschrijving">overschrijving</label><br>
+          <input type="radio" id="VisaCard" name="Betaling" value="Visa Card">
+          <label for="VisaCard">Visa Card</label><br>
+          <input type="radio" id="PayPal" name="Betaling" value="PayPal">
+          <label for="PayPal">PayPal</label>
+        </div>
+      
+   
+        
+        <div class="col-8">
+          <button type="submit" class="btn btn-primary" id="btn">Sign in</button>
+        </div>
+      </div>
+      </div>
+      </form>
+    </div>
+<script src="js/app.js"></script>
+</body>
+
+</html>
+
+

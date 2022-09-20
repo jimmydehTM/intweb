@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les 2:Oefening even - oneven</title>
+</head>
+<body>
+<script>
+
+    // even - oneven 
+
+    // let getal = parseInt(prompt("Geef een getal in tussen 10 en 20", "0"));
+    // let quadraat = parseInt(getal) * parseInt(getal);
+
+    // if (getal < 10){
+    //     alert("Dit getal is kleiner dan 10");
+    // }else if (getal > 20){
+    //     alert("Dit getal is groter dan 20");
+    // }else {alert(`Het kwadraat van het getal ` + getal + ` is ` + quadraat)}
+
+    // switch(true){
+    //     case (getal < 10): alert("Dit getal is kleiner dan 10")
+    //         break;
+    //     case (getal > 20): alert("Dit getal is groter dan 20");
+    //         break;
+    //     default: alert(`Het kwadraat van het getal ` + getal + ` is ` + quadraat)
+        
+    // }
+
+    // bioscoop
+
+    // let leeftijd = parseInt(prompt('Geef je leeftijd in: ', '0'))
+
+    // switch(true){
+    //     case (leeftijd === NaN): alert('Geef een getal in')
+    //     break
+    //     case (leeftijd <br 12 && leeftijd > 5): alert('halve prijs')
+    //     break
+    //     case (leeftijd <br 55 && leeftijd > 12): alert('vol tarief')
+    //     break
+    //     default: alert('gratis')
+        
+    // } 
+
+    // Klein Middel Groot
+
+    let getal1 = parseInt(prompt('Geef een getal: ', '0'))
+    let getal2 = parseInt(prompt('Geef nog een getal: ', '0'))
+    let getal3 = parseInt(prompt('Geef nog een laatste getal: ', '0'))
+
+    let gesorteerd = [getal1, getal2, getal3]
+     gesorteerd.sort((a,b) => a-b)
+    alert(`Het kleinste getal is ${gesorteerd[0]}\r\nHet middelste getal is ${gesorteerd[1]}\r\nHet grootste getal is ${gesorteerd[2]}`)
+    
+    
+    
+</script>
+
+</body>
+</html>

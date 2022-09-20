@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap v5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+    <style>
+        .custom-row {
+            background-color: bisque;
+            height: 400px;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-2">col one</div>
+            <div class="col-sm-12 col-md-6 col-lg-8">col two</div>
+        </div>
+
+        
+            <div class="row">
+                <div class="col-sm-6 order-sm-2">col three</div>
+                <div class="col-sm-6 order-sm-1">col four</div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 offset-2">col five</div>
+                <div class="col-sm-4 offset-1">col six</div>
+            </div>
+
+            <div class="row custom-row justify-content-center align-items-center gx-5">
+                <div class="col-sm-4"><div class="p-3 border bg-light">col seven</div></div>
+                <div class="col-sm-4"><div class="p-3 border bg-light">col eight</div></div>
+            </div>
+            <div class="row">
+                
+                <!-- Button trigger modal -->
+                <div class="col"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button></div>
+
+
+                <div class="col"><button type="button" class="btn btn-secondary">Secondary</button></div>
+                <div class="col"><button type="button" class="btn btn-danger">Danger</button></div>
+                
+                
+            </div>
+            
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON intro</title>
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <h1>JSON parse()</h1>
+    <div id="divResult"></div>
+
+    <script>
+        // We ontvangen bijvoorbeeld een JSON string van de server....
+        let voorbeeldJSON =
+            '{"id": "r0971254","quota": 25,"isOnline": false,"start": "2021-02-16","courses": ["Statische websites","Interactieve websites","Datamanipulatie"],"student": {"name": "Thomas","age": 21,"city": "Geel"}}';
+
+        // Via de parse methode maken we er een JS object van
+        stud = JSON.parse(voorbeeldJSON);
+
+        // Test in de console
+        console.log(voorbeeldJSON);
+        console.log(stud);
+        console.log(stud.courses[1]); // Interactieve websites
+        console.log(stud.student["name"]);
+
+        let el = document.querySelector("#divResult");
+
+        // Oplijsten van courses
+        for (let i = 0; i < stud.courses.length; i++) {
+            el.innerHTML += stud.courses[i] + "<br />";
+        }
+    </script>
+
+
+</body>
+
+</html>

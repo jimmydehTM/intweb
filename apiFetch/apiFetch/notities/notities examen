@@ -1,0 +1,26 @@
+//5. arrays
+    //Higher functions: array.map array.filter array.reduce
+
+//6. DOM manipulatie
+
+//7. event listeners
+    //grid double
+    //kleuren tijd
+    //winkelkar
+
+//8. objecten inline
+    //datetime
+
+//9. objecten
+    //users boven 50 -> array.filter
+    //afstandbediening
+
+//11. XHR
+    //films ophalen
+
+//12. fetch
+    //fake JSON event delegation
+    //fetch async gallery
+
+//13. praktijk vb
+    //movies + weather

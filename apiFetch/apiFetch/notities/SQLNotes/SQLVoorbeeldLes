@@ -1,0 +1,40 @@
+DROP TABLE IF exists Les.Muziek;
+DROP TABLE IF exists Les.Uitvoerder;
+
+
+DROP SCHEMA IF exists Les;
+GO
+
+CREATE SCHEMA les;
+GO
+
+CREATE TABLE Les.Uitvoerder (
+	id int IDENTITY(1,1) NOT NULL,
+	naam varchar(100) NULL,
+	voornaam varchar(100) NULL,
+	CONSTRAINT PK_Uitvoerder PRIMARY KEY (id)
+);
+
+CREATE TABLE Les.Muziek (
+	id int IDENTITY(1,1) NOT NULL,
+	naam varchar(100) NOT NULL,
+	duurtijd int NULL,
+	uitvoerderId int NULL,
+	CONSTRAINT PK_Muziek PRIMARY KEY (id),
+	CONSTRAINT FK_Muziek_Uitvoerder FOREIGN KEY (uitvoerderId)
+		REFERENCES Les.Uitvoerder (id)
+);
+
+INSERT INTO Les.Uitvoerder (voornaam, naam)
+VALUES ('A', 'B');
+
+INSERT INTO Les.Uitvoerder (naam, voornaam)
+VALUES ('A', 'B');
+
+INSERT INTO Les.Uitvoerder (voornaam, naam)
+VALUES ('C', 'D'),
+	   ('E', 'F'),
+	   ('G', null);
+
+	   INSERT INTO Les.Uitvoerder (voornaam)
+VALUES ('C');

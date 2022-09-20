@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="#">
+
+    <title>Promise then - catch - finally</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Promise then - catch - finally</h1>
+                <div class="row" id="divResult"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    // Voorbeeld met .then() waar alles goed loopt
+    let belofteVoorbeeld = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Klaar na 3 seconden!"), 3000);
+    });
+
+    // resolve spreekt de eerste functie aan in .then
+    belofteVoorbeeld.then(
+        result => document.querySelector("#divResult").innerHTML = result, // toont "klaar!" na 3 seconden
+        error => document.querySelector("#divResult").innerHTML = error // zal niet verschijnen
+    );
+
+
+    /*
+    // Voorbeeld met .then() maar nu genereren we een Error object
+    let belofteVoorbeeld = new Promise(function(resolve, reject) {
+        setTimeout(() => reject(new Error("Whoops!")), 3000);
+    });
+
+    // reject runs the second function in .then
+    belofteVoorbeeld.then(
+        result => document.querySelector("#divResult").innerHTML = result, // zal niet verschijnen
+        error => document.querySelector("#divResult").innerHTML = error // toont "Error: Whoops!" na 3 seconden
+    );
+    */
+
+    /*
+    // Voorbeeld met .finally dat altijd uitgevoerd wordt
+        let belofteVoorbeeld = new Promise((resolve, reject) => {
+            setTimeout(() => resolve("Dat was even wachten...  "), 5000);
+        })
+
+        // so the loading indicator is always stopped before we process the result/error
+        belofteVoorbeeld.then(
+            result => document.querySelector("#divResult").innerHTML +=
+            result, // toont "Dat was even wachten..." na 5 seconden
+            error => document.querySelector("#divResult").innerHTML += error // zal niet verschijnen
+        );
+
+        // runs when the promise is settled, doesn't matter successfully or not
+        belofteVoorbeeld.finally(() => document.querySelector("#divResult").innerHTML +=
+            "We stoppen hier bijvoorbeeld performing cleanup, loading indicators...");
+    */
+</script>
+
+</html>

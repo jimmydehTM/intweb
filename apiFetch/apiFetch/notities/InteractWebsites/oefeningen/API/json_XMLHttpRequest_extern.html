@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="#">
+
+    <title>JSON XMLHttpRequest OpenWeatherMap</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>XMLHttpRequest extern JSON-bestand TM campussen</h1>
+                <button id="buttonRequest" class="btn btn-primary my-3">Toon campussen</button>
+                <div class="row" id="divResult"></div>
+                <!-- // row -->
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.querySelector("#buttonRequest").addEventListener('click', myRequest);
+
+    function myRequest() {
+        // 1. We maken een nieuwe instantie voor het XMLHttpRequest object
+        let xhr = new XMLHttpRequest();
+        const divRes = document.querySelector('#divResult');
+
+        // 2. We geven de nodige parameters mee voor het GET-request via de URL
+        xhr.open('GET', 'files/voorbeeld_campus_tm.json', true);
+
+        // 3. We zenden de aanvraag over het netwerk
+        xhr.send();
+
+        // 4. Dit wordt opgeroepen als de response ontvangen is
+        xhr.onload = function() {
+            // Indien de HTTP status van de response is 2xx (success)
+            if (xhr.status != 200) {
+                // bijvoorbeeld 404: Not Found => wijzig de naam van het json-bestand
+                divRes.innerHTML = `Error ${xhr.status}: ${xhr.statusText}`;
+            } else { // show the result
+                const arrResponse = JSON.parse(xhr.responseText);
+                // console.log(arrResponse);
+
+                // We spreken de functie createHTMLCard aan en geven de array als argument mee
+                divRes.innerHTML = createHTMLCard(arrResponse);
+
+                // We hadden dit ook in één regel kunnen schrijven
+                // divRes.innerHTML = createHTMLCard(JSON.parse(xhr.responseText));
+            }
+        };
+
+        xhr.onerror = function() {
+            divRes.innerHTML = "Request failed";
+        };
+    }
+
+    function createHTMLCard(arrObj) {
+        let res = '';
+
+        // We lezen ieder element van de array uit
+        for (let i = 0; i < arrObj.length; i++) {
+            // In de body tonen we de naam van de campus + pc & city
+            res +=
+                `<div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="card m-2">
+                            <div class="card-body bg-danger text-white">
+                                <h5 class="card-title">${arrObj[i].name}</h5>
+                                <p>${arrObj[i].pc} ${arrObj[i].city}</p>
+                            </div>`;
+
+            // Enkel indien er opleidingen zijn maken we een ul aan
+            if (arrObj[i].edu.length > 0) {
+                res += '<ul class="list-group list-group-flush">';
+                // We lijsten iedere opleining op in een listitem
+                for (let value of arrObj[i].edu) {
+                    res += '<li class ="list-group-item">' + value + '</li>';
+                }
+                res += '</ul>';
+            }
+
+            // In de footer tonen we of er parking is of niet
+            res +=
+                `<div class = "card-footer bg-dark text-white" > 
+                        ${arrObj[i].parking ? 'parking aanwezig' : 'geen parking'} 
+                        </div> 
+                        </div> <!-- // card -->
+                        </div> <!-- // col-4 -->
+                    `;
+        }
+        return res;
+    }
+</script>
+
+</html>

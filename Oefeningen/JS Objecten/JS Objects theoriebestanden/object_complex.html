@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objecten: object complex</title>
+    <link rel="shortcut icon" href="#">
+
+</head>
+
+<body>
+    <h1>Objecten complex</h1>
+    <div id="divResult"></div>
+    <script>
+        const res = document.querySelector("#divResult");
+
+        // Voorbeeld van complex object 
+        let persoon = {
+            // properties 
+            // string
+            woonplaats: "Geel",
+            // array
+            naam: ["Thomas", "More"],
+            // number
+            zussen: 2,
+            gbjaar: 1986,
+            // boolean 
+            isEenMens: true,
+            // object in object
+            faveten: {
+                soep: "tomatensoep",
+                hoofd: "friet met stoofvlees"
+            },
+            // eigenschap met inline functie als resultaat
+            volledigenaam: function() {
+                return this.naam[0] + " " + this.naam[1];
+            }
+        };
+
+        // Volledig object tonen
+        console.log(persoon);
+
+        console.log(persoon.naam[0]);
+        console.log(persoon.faveten.soep);
+
+        // Shorthand schrijfwijze
+        // res.textContent = (persoon.isEenMens) ? "Het is een mens" : "Het is een ander wezen";
+
+        if (persoon.isEenMens) {
+            res.textContent = "Het is een mens";
+        } else {
+            res.textContent = "Het is een ander wezen";
+        }
+
+
+        persoon.isEenMens = false;
+        console.log(persoon.isEenMens);
+
+        persoon.naam[1] = "Mores";
+        console.log(persoon.naam[1]);
+    </script>
+
+</body>
+
+</html>
+
+</html>

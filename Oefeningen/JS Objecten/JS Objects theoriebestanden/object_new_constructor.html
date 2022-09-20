@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objecten: object constructor</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <h1>Objecten</h1>
+    <div id="divResult"></div>
+    <script>
+        // Voorbeelden van new Object().
+        let persoon = new Object();
+
+        // Properties toevoegen en een waarde geven.
+        persoon.voornaam = "Thomas";
+        persoon.achternaam = "More";
+        persoon.woonplaats = "Geel";
+
+        // Schrijf eigenschap van een object naar het scherm
+        document.getElementById("divResult").innerHTML = "Voornaam: " + persoon.voornaam +
+            "<br />" + "Achternaam: " + persoon.achternaam;
+    </script>
+
+</body>
+
+</html>

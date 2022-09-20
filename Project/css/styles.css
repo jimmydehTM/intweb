@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    
+    
+}
+
+body{
+    margin-top: 2rem;
+}
+
+#title {
+    padding: 0.5rem;
+}
+
+
+.btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+
+/* positionereing van de alerts */
+
+.alerts {
+  left: 1; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: 2rem;
+  margin-top: -40px;
+  width: 300px;
+  position: absolute;
+  z-index: 1;
+  }
+
+
+
+
+#alerttitle{
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+
+#alert-comment {
+    font-size: small;
+    padding-left: 0;
+    
+}
+

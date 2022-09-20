@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gebruik van this</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <h1>Gebruik van this</h1>
+    <div id="divResult"></div>
+
+    <script>
+        function Persoon(naam, voornaam) {
+            this.titel = titel;
+            this.auteur = auteur;
+        }
+        let boekHtml = new Boek("Handboek HTML", "Joske Vermeulen");
+        let boekWindows = new Boek("Ontdek Windows 10", "Suske Thijs");
+
+        // Er zijn nu twee boek-objecten, elk met een eigen titel en auteur.
+        console.log(boekHtml.auteur); // Joske Vermeulen
+        console.log(boekWindows.titel); // Ontdek Windows 10
+    </script>
+</body>
+
+</html>

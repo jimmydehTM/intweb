@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <h2>The JavaScript <i>this</i> Keyword</h2>
+
+    <p>In dit voorbeeld stelt <b>this</b>, het <b>persoon</b> object voor.</p>
+    <p>Omdat het persoon object de volledige_naam methode "bezit".</p>
+
+    <div id="divResult"></div>
+
+    <script>
+        // Maak een object:
+        let persoon = {
+            voornaam: "Thomas",
+            achternaam: "More",
+            woonplaats: "Geel",
+            volledigeNaam: function() {
+                return this.voornaam + " " + this.achternaam;
+            }
+        };
+
+        // Toon de gegevens/eigenschappen van het object:
+        document.querySelector("#divResult").textContent = persoon.volledigeNaam();
+    </script>
+
+</body>
+
+</html>
